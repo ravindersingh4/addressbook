@@ -17,7 +17,7 @@ pipeline {
             }
         }
 	stage('dockerbuild'){
-		step {
+		steps {
 			sh 'cp /var/lib/jenkins/workspace/raviPipeline/addressbook_main/target/addressbook.war .'
 			sh 'echo "FROM bitnami/tomcat" > dockerfile'
 			sh 'echo "COPY addressbook.war /opt/bitnami/tomcat/webapps_default/addressbook.war" >> dockerfile'
