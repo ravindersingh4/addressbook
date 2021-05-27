@@ -16,7 +16,7 @@ pipeline {
                 sh 'mvn package'
             }
         }
-	stage(docker build){
+	stage(dockerbuild){
 		step {
 			sh 'cp /var/lib/jenkins/workspace/raviPipeline/addressbook_main/target/addressbook.war .'
 			sh 'echo "FROM bitnami/tomcat" > dockerfile'
